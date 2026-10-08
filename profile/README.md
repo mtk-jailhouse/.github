@@ -19,17 +19,17 @@ Genio samples, and run Zephyr in a Jailhouse cell, step by step.
 
 | Repository | Content |
 |---|---|
-| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support, on the default branch `mtk-genio-dev` |
+| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support: development on the default branch `mtk-genio-dev`, releases on `mtk-v1.0` |
 
 ## What the Genio support adds
 
 - **Cells for the Genio 510 and Genio 700 EVKs:** a root cell for Linux, and
-  Zephyr cells on a Cortex-A55, on a Cortex-A78, on two cores (SMP), and with
-  the audio front end.
-- **Shared register blocks, mediated per pin:** the MT8188 GPIO, pin
-  configuration, external interrupt (EINT) and clock gate registers are shared
-  by Linux and the cells. Each cell can only read and change the fields of the
-  pins and clock gates it owns.
+  Zephyr cells on a Cortex-A55, on a Cortex-A78, on two cores (SMP), with the
+  audio front end, and with memory shared with Linux for RPMsg.
+- **Shared register blocks, mediated per pin:** the MT8188 GPIO, external
+  interrupt (EINT) and clock gate registers are shared by Linux and the cells.
+  Each cell can only read and change the fields of the pins and clock gates it
+  owns. The pin configuration registers stay with Linux.
 - **Shared interrupts:** an EINT is delivered to the cell that owns its pin.
 - **GICv3 and SMC handling for cells:** redistributor gaps of disabled cores,
   the pending state of a cell's SGIs, and per-cell restrictions on calls to
