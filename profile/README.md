@@ -19,7 +19,7 @@ Genio samples, and run Zephyr in a Jailhouse cell, step by step.
 
 | Repository | Content |
 |---|---|
-| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support: development on the default branch `mtk-genio-dev`, releases on `mtk-v1.0` |
+| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support: development on the default branch `mtk-genio-dev`, releases on `mtk-v1.0` (current release: tag `mtk-v1.0.0`) |
 
 ## What the Genio support adds
 
