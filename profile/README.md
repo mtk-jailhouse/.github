@@ -13,13 +13,17 @@ Linux in a Jailhouse cell.
 **[User guide (PDF)](https://github.com/mtk-zephyr/genio-docs/releases/latest/download/genio-jailhouse-zephyr-guide.pdf):
 Running Zephyr alongside Linux with Jailhouse on Genio 510 and Genio 700 EVKs.**
 Build the IoT Yocto image with Jailhouse, flash the board, build Zephyr and the
-Genio samples, and run Zephyr in a Jailhouse cell, step by step.
+Genio samples, and run Zephyr in a Jailhouse cell, step by step. This is user
+guide 1.0, for the release `mtk-v1.0.0`. The pre-release `v26.1-rc1` has its
+own guide,
+[user guide 26.1-rc1](https://github.com/mtk-zephyr/genio-docs/releases/tag/v26.1-rc1),
+whose PDF was revised on 2026-10-28 for the Zephyr tags.
 
 ## Repositories
 
 | Repository | Content |
 |---|---|
-| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support: development on the default branch `mtk-genio-dev`, releases on `mtk-v1.0` (current release: tag `mtk-v1.0.0`) |
+| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support. Development and releases are on the default branch `scarthgap`, named after the IoT Yocto release line it targets; a release is named after the IoT Yocto release it ships with. Pre-release: tag `v26.1-rc1`. Previous release: tag `mtk-v1.0.0` on the branch `mtk-v1.0` |
 
 ## What the Genio support adds
 
@@ -31,6 +35,19 @@ Genio samples, and run Zephyr in a Jailhouse cell, step by step.
   Each cell can only read and change the fields of the pins and clock gates it
   owns. The pin configuration registers stay with Linux.
 - **Shared interrupts:** an EINT is delivered to the cell that owns its pin.
+- **A watchdog for each Zephyr cell:** each cell gets a watchdog of its own,
+  with the registers of the MT8188 watchdog, while Linux keeps the hardware
+  watchdog. A cell that misses its deadline, or requests a reset, fails
+  alone; the SoC and the other cells keep running.
+- **Restarting failed cells:** the daemon `jailhouse-cell-restartd` runs on
+  Linux and restarts the cells that fail, as its configuration file names
+  them.
+- **A tick from Linux:** the Jailhouse driver gives the hypervisor a tick
+  through the `tick` hypercall, every 100 ms by default. The hypervisor
+  checks the cells' watchdog deadlines on it.
+- **Reset cause:** after a restart, a cell reads from its watchdog why its
+  previous run ended: a watchdog timeout or a reset request. Zephyr reports
+  it through its `hwinfo` API.
 - **GICv3 and SMC handling for cells:** redistributor gaps of disabled cores,
   the pending state of a cell's SGIs, and per-cell restrictions on calls to
   the secure world.
