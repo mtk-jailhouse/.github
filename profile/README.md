@@ -23,7 +23,7 @@ whose PDF was revised on 2026-10-28 for the Zephyr tags.
 
 | Repository | Content |
 |---|---|
-| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support. Development and releases are on the default branch `scarthgap`, named after the IoT Yocto release line it targets; a release is named after the IoT Yocto release it ships with. Pre-release: tag `v26.1-rc1`. Previous release: tag `mtk-v1.0.0` on the branch `mtk-v1.0` |
+| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support. Development and releases are on the default branch `scarthgap`, named after the IoT Yocto release line it targets; a release is named after the IoT Yocto release it ships with. The pre-release `v26.1-rc1` pairs with the Genio Zephyr tags `v26.1-rc1` (Zephyr 4.4.2); the [mtk-zephyr](https://github.com/mtk-zephyr) page lists the Zephyr branches. Previous release: tag `mtk-v1.0.0` on the branch `mtk-v1.0` |
 
 ## What the Genio support adds
 
