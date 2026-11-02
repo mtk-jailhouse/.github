@@ -8,22 +8,19 @@ Linux in a Jailhouse cell.
 
 ## Get started
 
-<a href="https://github.com/mtk-zephyr/genio-docs/releases/latest/download/genio-jailhouse-zephyr-guide.pdf"><img src="https://raw.githubusercontent.com/mtk-zephyr/genio-docs/v1.0/assets/guide-preview.png" alt="Pages of the user guide: the cover, the system overview, and running a Zephyr image" width="100%"></a>
+<a href="https://github.com/mtk-zephyr/genio-docs/releases/latest/download/genio-jailhouse-zephyr-guide.pdf"><img src="https://raw.githubusercontent.com/mtk-zephyr/genio-docs/v26.1/assets/guide-preview.png" alt="Pages of the user guide: the cover, the system overview, and running a Zephyr image" width="100%"></a>
 
 **[User guide (PDF)](https://github.com/mtk-zephyr/genio-docs/releases/latest/download/genio-jailhouse-zephyr-guide.pdf):
 Running Zephyr alongside Linux with Jailhouse on Genio 510 and Genio 700 EVKs.**
-Build the IoT Yocto image with Jailhouse, flash the board, build Zephyr and the
-Genio samples, and run Zephyr in a Jailhouse cell, step by step. This is user
-guide 1.0, for the release `mtk-v1.0.0`. The pre-release `v26.1-rc1` has its
-own guide,
-[user guide 26.1-rc1](https://github.com/mtk-zephyr/genio-docs/releases/tag/v26.1-rc1),
-whose PDF was revised on 2026-10-28 for the Zephyr tags.
+Build the IoT Yocto image with Jailhouse, flash the board, build Zephyr and
+MediaTek Zephyr Samples, and run Zephyr in a Jailhouse cell, step by step.
+This is user guide 26.1, for the release `v26.1`.
 
 ## Repositories
 
 | Repository | Content |
 |---|---|
-| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support. Development and releases are on the default branch `scarthgap`, named after the IoT Yocto release line it targets; a release is named after the IoT Yocto release it ships with. The pre-release `v26.1-rc1` pairs with the Genio Zephyr tags `v26.1-rc1` (Zephyr 4.4.2); the [mtk-zephyr](https://github.com/mtk-zephyr) page lists the Zephyr branches. Previous release: tag `mtk-v1.0.0` on the branch `mtk-v1.0` |
+| [jailhouse](https://github.com/mtk-jailhouse/jailhouse) | Jailhouse with the Genio support. Development and releases are on the default branch `scarthgap`, named after the IoT Yocto release line it targets; a release is named after the IoT Yocto release it ships with. The release `v26.1` pairs with MediaTek Zephyr `v26.1` and MediaTek Zephyr Samples `v26.1` (Zephyr 4.5.0); the [mtk-zephyr](https://github.com/mtk-zephyr) page lists the Zephyr branches |
 
 ## What the Genio support adds
 
@@ -61,7 +58,8 @@ whose PDF was revised on 2026-10-28 for the Zephyr tags.
 
 ## Related
 
-- [mtk-zephyr](https://github.com/mtk-zephyr): Zephyr for MediaTek Genio, and
-  the [documentation](https://github.com/mtk-zephyr/genio-docs)
+- [mtk-zephyr](https://github.com/mtk-zephyr): Zephyr for MediaTek Genio, with
+  MediaTek Zephyr, MediaTek Zephyr Samples and the
+  [documentation](https://github.com/mtk-zephyr/genio-docs)
 - [Jailhouse](https://github.com/siemens/jailhouse): the upstream project
 - [IoT Yocto](https://genio.mediatek.com/doc/iot-yocto/latest/sw/yocto/get-started.html): the Linux BSP for Genio
